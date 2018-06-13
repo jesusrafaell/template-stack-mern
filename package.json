@@ -4,7 +4,9 @@
   "description": "Template for proyects with: nodejs, express, mongodb, react, redux-saga",
   "main": "./server/app.js",
   "scripts": {
-    "server": "babel-node ./server/app.js"
+    "server": "babel-node ./server/app.js",
+    "build": "webpack",
+    "start": "webpack && webpack-dev-server --config ./webpack.config.js --mode development --open --hot"
   },
   "keywords": [],
   "author": "@iesusrafaell",
@@ -23,7 +25,10 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.11",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
     "webpack": "^4.12.0",
-    "webpack-cli": "^3.0.4"
+    "webpack-cli": "^3.0.4",
+    "webpack-dev-server": "^3.1.4"
   }
 }
