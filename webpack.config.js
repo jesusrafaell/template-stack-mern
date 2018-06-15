@@ -1,4 +1,5 @@
-const webpack = require('webpack');
+const webpack = require( 'webpack');
+const liveReloadPlugin = require ('webpack-livereload-plugin');
 
 module.exports = {
 	mode: 'production',
@@ -6,7 +7,7 @@ module.exports = {
 	entry: './src/index.js',
 	output: {
 		filename: 'bundle.js',
-		publicPath: '/dist',
+		publicPath: '/client',
 		path: `${__dirname}/client`
 	},
 	module: {
@@ -33,7 +34,10 @@ module.exports = {
 			`${__dirname}/node_modules`
 		]
 	},
-	plugins: [new webpack.HotModuleReplacementPlugin() ],
+	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+		new liveReloadPlugin()
+	],
 	devServer: {
 		contentBase: './client',
 		hot: true
